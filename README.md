@@ -44,7 +44,7 @@ profile = {
 <tr>
 <td width="50%" valign="top">
 
-### ⚡ [Dyna-Cache](https://github.com/S-atvikSingh/dyna-cache)
+### [Dyna-Cache](https://github.com/S-atvikSingh/dyna-cache)
 **Semantic caching middleware for LLM applications**
 
 Traditional caches require exact string matches. Dyna-Cache
@@ -53,10 +53,10 @@ semantically equivalent queries — intercepting requests before
 they ever reach the LLM.
 
 **Benchmarked results:**
-- 🚀 **70x+ effective speedup** vs remote LLM roundtrip
-- ⏱️ ~14ms cache HIT vs 1,000–5,000ms LLM call
-- 💰 >98% latency reduction per cached request
-- 📊 Production telemetry: hit rates, latency saved, cost delta
+- **70x+ effective speedup** vs remote LLM roundtrip
+- ~14ms cache HIT vs 1,000–5,000ms LLM call
+- 98% latency reduction per cached request
+- Production telemetry: hit rates, latency saved, cost delta
 
 **Key decision:** L2 distance threshold of 0.35 on FAISS index
 tuned to balance precision vs recall — too low returns wrong
@@ -67,7 +67,7 @@ answers, too high never hits the cache.
 </td>
 <td width="50%" valign="top">
 
-### 🔍 [Knowledge Assistant](https://github.com/S-atvikSingh/knowledge-assistant)
+### [Knowledge Assistant](https://github.com/S-atvikSingh/knowledge-assistant)
 **RAG-powered document Q&A system**
 
 Upload any document, ask questions in natural language, get
@@ -76,9 +76,9 @@ logic prevents the model from answering outside retrieved
 context — the core failure mode of most RAG systems.
 
 **Results:**
-- 📊 **95% answer faithfulness** (RAGAS eval, 200-question set)
-- 🔒 Strict prompt constraints enforce source citation on every answer
-- 🏗️ Full-stack: async FastAPI backend + React frontend
+- **95% answer faithfulness** (RAGAS eval, 200-question set)
+- Strict prompt constraints enforce source citation on every answer
+- Full-stack: async FastAPI backend + React frontend
 
 **Key decision:** Semantic chunking over fixed-size chunking
 improved faithfulness from 71% → 95% — the retrieval strategy
@@ -99,9 +99,9 @@ mattered more than the model.
 
 | Project | The Problem | Why It's Hard | Stack |
 |---|---|---|---|
-| 🧠 **WhyFail** | Leetcode tells you *that* your solution failed — not *why* your logic breaks on that specific input or what class of problem you're actually stuck on | Socratic guidance without revealing the answer is a constrained generation problem general LLMs are inconsistent at | LangGraph · pgvector · LangSmith · FastAPI |
-| ⚔️ **DesignCritic** | No way to stress-test system designs before an interview. Generic AI feedback doesn't probe failure modes the way a real staff engineer would | Requires a real knowledge base of how actual companies (Netflix, Discord, Uber) solved the same problems — retrieval must be semantic, not keyword | LangGraph · Multi-Agent · pgvector · LangSmith |
-| 👁️ **DocWatch** | Documentation goes stale silently when code changes. A function renamed `verify()` → `validate()` can invalidate docs that never mention either word | True staleness detection requires semantic diff, not string matching — this is a retrieval problem disguised as a docs problem | LangGraph · pgvector · GitHub App · Celery |
+| **WhyFail** | Leetcode tells you *that* your solution failed — not *why* your logic breaks on that specific input or what class of problem you're actually stuck on | Socratic guidance without revealing the answer is a constrained generation problem general LLMs are inconsistent at | LangGraph · pgvector · LangSmith · FastAPI |
+| **DesignCritic** | No way to stress-test system designs before an interview. Generic AI feedback doesn't probe failure modes the way a real staff engineer would | Requires a real knowledge base of how actual companies (Netflix, Discord, Uber) solved the same problems — retrieval must be semantic, not keyword | LangGraph · Multi-Agent · pgvector · LangSmith |
+| **DocWatch** | Documentation goes stale silently when code changes. A function renamed `verify()` → `validate()` can invalidate docs that never mention either word | True staleness detection requires semantic diff, not string matching — this is a retrieval problem disguised as a docs problem | LangGraph · pgvector · GitHub App · Celery |
 
 ---
 
